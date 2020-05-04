@@ -1,0 +1,37 @@
+{
+  "id": "1774898",
+  "name": "ymwebsite",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "915608",
+      "name": "广告",
+      "font_class": "guanggao",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "3702788",
+      "name": "收入统计",
+      "font_class": "navicon-srtj",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "1128745",
+      "name": "操作",
+      "font_class": "caozuo",
+      "unicode": "e7b8",
+      "unicode_decimal": 59320
+    },
+    {
+      "icon_id": "6255839",
+      "name": "流量",
+      "font_class": "liuliang",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    }
+  ]
+}

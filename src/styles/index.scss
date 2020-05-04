@@ -1,0 +1,50 @@
+@import "./reset.scss";
+
+html,body{
+  height: 100%;
+}
+
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after{
+  content: " ";
+  display: inline-block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix{
+  *zoom: 1;
+}
+ 
+/*隐藏*/
+.dn{
+  display: none;
+}
+
+.flex{
+  display: flex;
+}
+.flex1{
+  flex: 1;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+.flex-between{
+  justify-content: space-between;
+}
+.flex-end{
+  justify-content: flex-end;
+}
+.align-center{
+  align-items: center;
+}
+.justify-center{
+  justify-content: center;
+}
+.all-center{
+  align-items: center;
+  justify-content: center;
+}
