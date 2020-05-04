@@ -1,15 +1,12 @@
 <template>
   <div id="app">
     <my-header v-if="headerHide"></my-header>
-    <!-- <div class="main" style="height: 100%"> -->
-      <!-- <router-view/> -->
-      <transition name="fade">
-        <template class="flex1">
-          <router-view/>
-        </template>
-      </transition>
-      <!-- <p class="foot flex all-center">这是版权</p> -->
-    <!-- </div> -->
+
+    <transition name="fade">
+      <template class="flex1">
+        <router-view/>
+      </template>
+    </transition>
     
     <p class="foot flex all-center" v-if="$route.path != '/'">Copyright © 2020 深圳市篱笆科技有限公司 粤ICP备20026264号-1备案号</p>
     <el-dialog :visible.sync="showLogin" width="400px" @close="cancel" top="30vh">
@@ -99,11 +96,6 @@ export default {
       }
     }
   },
-  // created () {
-  //   this.$get('/api/releaseType').then(res => {
-  //       console.log(res)
-  //     })
-  // },
   computed: {
     showLogin:{
       get(val){
@@ -210,11 +202,6 @@ export default {
   height: 100%;
 }
 .main{
-  // height: calc(100% - 130px);
-  // >div{
-    // flex: 1;
-    // margin-top: 80px;
-  // }
   //  淡隐淡入
   .fade-enter-active, .fade-leave-active{
       transition: all .2s ease-in-out;

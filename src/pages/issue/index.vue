@@ -20,7 +20,7 @@
       </div>
 
       <div class="preview">
-         <iframe class="previewPage" id="iframeId" src="http://localhost:8082" frameborder="0"></iframe>
+         <iframe class="previewPage" id="iframeId" src="http://localhost:8081" frameborder="0"></iframe>
       </div>
    </div>
 </template>
@@ -115,7 +115,7 @@ export default {
          data = Object.assign({},data,previewParam)
          let frame = document.getElementById('iframeId');  // 或者用vue语法 let frame = this.$refs.iframeId
          // if(process){}
-         frame.contentWindow.postMessage(data,'http://localhost:8082/#/');
+         frame.contentWindow.postMessage(data,'http://localhost:8081/#/');
       },
       closePreviewDialog(){
          this.setPreviewDialog(false)
