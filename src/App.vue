@@ -23,7 +23,6 @@
               <el-input v-model="form.smsCode" maxlength="6" placeholder="请输入验证码"></el-input>
             </el-col>
             <el-col :span="9" style="text-align: right">
-              <!-- <div class="code" @click="sendSmscode">获取短信验证码</div> -->
               <el-button class="code" :loading="sendCodeLoading" @click="sendSmscode" v-if="sendCodeTime == 0">获取验证码</el-button>
               <el-button class="codeTime" v-else>{{sendCodeTime}}秒</el-button>
             </el-col>
