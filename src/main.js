@@ -56,13 +56,11 @@ router.beforeEach((to, from, next) => {
           message: '您未登录,请先登录!',
           type: 'error'
         })
-        // store.commit('SET_LOGIN',true)
       }
     }else{
       next()
     }
   }, 100);
-  
 })
 
 /* eslint-disable no-new */

@@ -40,7 +40,7 @@ const routes = [
       component: () => import('@/pages/feedback'),
       hidden: true,
       meta: { title: '问题反馈' }
-   },
+   }
 ]
 
 export default routes

@@ -4,7 +4,7 @@
          <div class="logo"></div>
          <div class="nav flex align-center">
             <router-link class="item flex all-center" 
-                     v-for="item in routes" :key="item.name" :to="{name: item.name}">
+                     v-for="(item,index) in routes" :key="index" :to="{name: item.name}">
                      {{item.meta.title}}
             </router-link>
             <div v-if="getUserInfo || userInfo" class="userAount flex align-center">
@@ -58,11 +58,11 @@ export default {
            this.noBg = true
         }
      },
-     userInfo(val){
-        if(!val){
-           this.$router.push('/')
-        }
-     }
+   //   userInfo(val){
+   //      if(!val){
+   //         this.$router.push('/')
+   //      }
+   //   }
    },
    created () {
       // console.log(getStorage('userInfo'))

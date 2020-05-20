@@ -4,7 +4,7 @@ import { Message } from 'element-ui'
 import router from '../router'
 
 axios.defaults.timeout = 10000;
-axios.defaults.baseURL = 'http://www.uningx.com:8080'; //填写域名
+axios.defaults.baseURL = 'https://www.guangyi009.com'; //填写域名
 // axios.defaults.baseURL = 'http://3d98c952.ngrok.io'; //填写域名
 // axios.defaults.baseURL = '/api'; //填写域名  
 
@@ -33,7 +33,7 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(response => {
    if ( response.data.code != 200 ){
      
-      if (response.data.code == 502) {
+      if (response.data.code == 502 || response.data.code == 501) {
          Message({
             message: '登录已过期,请重新登录',
             type: 'error',
@@ -50,6 +50,13 @@ axios.interceptors.response.use(response => {
          })
          localStorage.clear()
          router.push({ name: 'home' })
+      } else
+      if (response.data.code == 500) {
+         Message({
+            message: response.data.msg || 'Error',
+            type: 'error',
+            duration: 3 * 1000
+         })
       }
    }
    
@@ -98,7 +105,11 @@ axios.interceptors.response.use(response => {
             console.log(`连接错误${err.response.status}`)
       }
    } else {
-      console.log('连接到服务器失败')
+      Message({
+         message: '连接到服务器失败',
+         type: 'error',
+         duration: 3 * 1000
+      })
    }
    return Promise.resolve(err.response)
 })
@@ -128,7 +139,11 @@ export function post(url, data = {}) {
    return new Promise((resolve, reject) => {
       axios.post(url, data)
          .then(response => {
-            resolve(response.data);
+            if (response){
+               resolve(response.data);
+            }else{
+               reject('连接错误')
+            }
          }, err => {
             reject(err)
          })

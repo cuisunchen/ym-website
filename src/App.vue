@@ -8,7 +8,14 @@
       </template>
     </transition>
     
-    <p class="foot flex all-center" v-if="$route.path != '/'">Copyright © 2020 深圳市篱笆科技有限公司 粤ICP备20026264号-1备案号</p>
+    <div class="foot flex all-center" v-if="$route.path != '/'">Copyright © 2020  粤ICP备20026264号-1备案号
+      <div>
+        <a
+          style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;" />
+          <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44030702002949号</p>
+        </a>
+      </div>
+    </div>
     <el-dialog :visible.sync="showLogin" width="400px" @close="cancel" top="30vh">
       <p slot="title" style="text-align:center">登录</p>
       <el-form :model="form" :rules="rules" ref="ruleForm" label-width="60px" class="demo-ruleForm">
@@ -140,6 +147,10 @@ export default {
                 clearInterval(time)
               }
             }, 1000)
+          }
+        }).catch(err => {
+          if(err){
+            this.sendCodeLoading = false
           }
         })
       }

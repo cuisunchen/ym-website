@@ -19,9 +19,11 @@
          <div class="content flex">
             <div class="text flex1 flex-column justify-center">
                <p> 联系我们 </p>
-               <p class="tel">电话: 13325674876</p>
+               <p class="tel">固话: 0755-82508482</p>
+               <p class="tel">手机: 13728760372</p>
                <p class="wechat">微信: youzhuan009</p>
                <p class="email">邮箱: youzhuan009@163.com</p>
+               <p class="address">地址: 深圳市龙岗区布吉街道金排社区凤尾坑新村38栋403</p>
             </div>
             <div class="img">
                <img src="../assets/us_img1.jpg" alt="">
